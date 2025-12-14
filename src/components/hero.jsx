@@ -18,7 +18,7 @@ export default function Hero() {
     };
 
     return (
-        <div id="home" className='relative min-h-screen flex items-center justify-center overflow-hidden pt-16 md:pt-20'>
+        <div id="home" className='relative min-h-screen flex items-center justify-center overflow-hidden pt-16 pb-5 md:pt-20'>
             {/* Background with overlay */}
 
             <div className='fixed inset-0 -z-40'>
@@ -50,7 +50,7 @@ export default function Hero() {
                             <h1 className='text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight'>
                                 I'm <span className='font-serif text-blue-300'>Charles MacAnthony</span>
                             </h1>
-                            <h2 className='text-3xl sm:text-4xl lg:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-purple-300'>
+                            <h2 className='text-3xl sm:text-4xl lg:text-5xl font-bold text-transparent bg-clip-text bg-linear-to-r from-blue-300 to-purple-300'>
                                 Professional Web Developer
                             </h2>
                         </div>

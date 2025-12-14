@@ -10,7 +10,6 @@ export function Navbar() {
     { id: "services", label: "Services" },
     { id: "about", label: "About" },
     { id: "projects", label: "Projects" },
-    { id: "socials", label: "Socials" },
     { id: "contact", label: "Contact" }
   ]
 
@@ -165,7 +164,7 @@ export function Navbar() {
       {/* Scroll Progress Bar */}
       <div className="fixed top-0 left-0 right-0 h-1 z-50">
         <div 
-          className="h-full bg-gradient-to-r from-blue-500 to-yellow-400 transition-all duration-300"
+          className="h-full bg-linear-to-r from-blue-500 to-yellow-400 transition-all duration-300"
           style={{
             width: `${Math.min((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100, 100)}%`
           }}
