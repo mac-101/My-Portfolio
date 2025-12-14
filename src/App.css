@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+.hero{
+  background-image: url(assets/WhatsApp\ Image\ 2025-12-11\ at\ 12.50.48_724b5d84.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+.header{
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  justify-content: space-around;
+  background-color: rgba(0, 0, 0, 0.356);
+  color: white;
+}
+nav{
+  display: flex;
+  gap: 100px;
+}
+nav li{
+  text-decoration: none;
+}
