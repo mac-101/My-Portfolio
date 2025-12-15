@@ -4,7 +4,7 @@ import pic2 from '../assets/pic-3.jpg';
 
 export default function Hero() {
     const handleViewPortfolio = () => {
-        const portfolioSection = document.getElementById('portfolio');
+        const portfolioSection = document.getElementById('services');
         if (portfolioSection) {
             portfolioSection.scrollIntoView({ behavior: 'smooth' });
         }
@@ -55,11 +55,7 @@ export default function Hero() {
                             </h2>
                         </div>
 
-                        <p className='text-lg sm:text-xl text-gray-200 max-w-2xl leading-relaxed'>
-                            I'm an experienced web developer with over 2+ years of expertise in the field,
-                            specializing in creating modern, responsive web applications. I collaborate
-                            effectively with teams and organizations to deliver exceptional digital solutions.
-                        </p>
+                       
 
                         <div className='flex flex-wrap gap-4'>
                             <button

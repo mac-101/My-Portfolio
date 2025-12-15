@@ -14,7 +14,7 @@ export default function Projects() {
       description: "Full-featured online store with cart, checkout, and admin dashboard",
       tags: ["React", "Firebase", "Rest Api", "Tailwind"],
       image: ecommerceImg, // Your imported image
-      liveLink: "#",
+      liveLink: "http://shopcart-demo.netlify.app",
       codeLink: "#"
     },
     {
@@ -22,7 +22,7 @@ export default function Projects() {
       description: "Real-time voting application for contests and competitions",
       tags: ["Firestore", "Tailwind", "Firebase Auth", "React", "Context API"],
       image: voting, // Your imported image
-      liveLink: "votelinkr-ui.netlify.app",
+      liveLink: "http://votelinkr-ui.netlify.app",
       codeLink: "#"
     },
     {
@@ -30,7 +30,7 @@ export default function Projects() {
       description: "All-in-one business management system for small businesses",
       tags: ["React", "Rechart", "Tailwind CSS"],
       image: business, // Your imported image
-      liveLink: "smartbizos.netlify.app",
+      liveLink: "http://smartbizos.netlify.app",
       codeLink: "#"
     },
     {
@@ -38,7 +38,7 @@ export default function Projects() {
       description: "A school online presence and management platform",
       tags: ["Html", "API", "CSS", "JavaScript"],
       image: schoolSite, // Your imported image
-      liveLink: "cleverschool.netlify.app",
+      liveLink: "http://cleverschool.netlify.app",
       codeLink: "#"
     },
    
@@ -87,6 +87,7 @@ export default function Projects() {
                   <div className="flex gap-4">
                     <a 
                       href={project.liveLink}
+                      target='_blank'
                       className="w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-blue-50 transition-colors"
                       title="View Live"
                     >

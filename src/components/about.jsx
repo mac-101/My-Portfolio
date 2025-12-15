@@ -35,6 +35,18 @@ export default function About() {
             level: "Advanced"
         }
     ]
+    //   const handleDownloadCV = () => {
+    //     // Method 1: Open in new tab
+    //     window.open(CV, '_blank')
+        
+    //     // OR Method 2: Force download
+    //     // const link = document.createElement('a')
+    //     // link.href = '/Charles_MacAnthony_CV.pdf'
+    //     // link.download = 'Charles_MacAnthony_CV.pdf'
+    //     // document.body.appendChild(link)
+    //     // link.click()
+    //     // document.body.removeChild(link)
+    // }
 
     return (
         <section id="about" className="py-16 px-3 bg-white">
@@ -108,12 +120,18 @@ export default function About() {
                         </div>
 
                         {/* CTA */}
-                        <div className="pt-6">
-                            <button className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
-                                <Download className="w-5 h-5" />
-                                Download Resume
-                            </button>
-                        </div>
+                        <div className="pt-4">
+                        <a 
+                            href="/public/Charles_MacAnthony_CV.pdf.pdf"
+                            download="Charles_MacAnthony_Resume.pdf"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                        >
+                            <Download className="w-5 h-5" />
+                            Download Resume
+                        </a>
+                    </div>
                     </div>
 
                 </div>
