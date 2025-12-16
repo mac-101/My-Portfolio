@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import pic from "../assets/pic.jpg";
-import pic2 from "../assets/pic-3.jpg";
+import pic2 from "../assets/pic-6.jpeg";
 
 export default function Hero() {
   const roles = [
@@ -49,7 +49,6 @@ export default function Hero() {
             backgroundAttachment: "fixed",
           }}
         />
-        <div className="absolute inset-0 bg-linear-to-r from-blue-900/70 to-purple-900/70" />
         <div className="absolute inset-0 bg-black/40" />
       </div>
 

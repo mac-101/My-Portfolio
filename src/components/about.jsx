@@ -1,10 +1,13 @@
 import React from 'react'
 import { User, MapPin, Briefcase, Download, Code2, Database, Smartphone, CheckCircle } from 'lucide-react'
-import pic from '../assets/pic-4.jpg'
 
 export default function About() {
     const skills = [
-        {
+         {
+            icon: <Code2 className="w-5 h-5" />,
+            name: "HTML/CSS",
+            level: "Advanced"
+        },{
             icon: <Code2 className="w-5 h-5" />,
             name: "React.js",
             level: "Advanced"
@@ -19,11 +22,7 @@ export default function About() {
             name: "Firebase",
             level: "Advanced"
         },
-        {
-            icon: <Database className="w-5 h-5" />,
-            name: "Firestore",
-            level: "Advanced"
-        },
+       
         {
             icon: <Smartphone className="w-5 h-5" />,
             name: "Responsive Design",
@@ -53,20 +52,9 @@ export default function About() {
             <div className="max-w-6xl mx-auto">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
-                    {/* Image Section */}
-                    <div className="relative">
-                        <div className="mx-auto overflow-hidden rounded-2xl shadow-lg">
-                            <img
-                                src={pic}
-                                alt="Charles MacAnthony"
-                                className="w-full h-full object-cover"
-                            />
-                        </div>
-                        <div className="absolute -top-4 -left-4 w-20 h-20 bg-blue-200/30 rounded-full blur-xl"></div>
-                    </div>
+                    {/*  */}
 
                     {/* Content Section */}
-                    <div className="space-y-8">
                         <div className="space-y-6">
                             <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 text-blue-700 rounded-full text-sm font-semibold">
                                 <User className="w-4 h-4" />
@@ -135,7 +123,6 @@ export default function About() {
                     </div>
 
                 </div>
-            </div>
         </section>
     )
 }
