@@ -91,7 +91,7 @@ export default function Projects() {
           <div className="p-8 border-b border-gray-200 bg-gradient-to-r from-blue-50 to-indigo-50">
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
               <div>
-                <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-full text-sm font-semibold mb-3">
+                <div className="inline-flex items-center gap-2 px-4 py-2  text-blue-500 rounded-full text-sm font-semibold mb-3">
                   <Sparkles className="w-4 h-4" />
                   Flagship Project
                 </div>
@@ -105,7 +105,7 @@ export default function Projects() {
                 href="http://smartbizos.netlify.app"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium whitespace-nowrap"
+                className="inline-flex items-center gap-2 px-6 py-3 text-black rounded-lg hover:bg-blue-700 transition-colors font-medium whitespace-nowrap"
               >
                 <ExternalLink className="w-5 h-5" />
                 Live Application
