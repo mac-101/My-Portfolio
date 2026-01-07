@@ -56,12 +56,8 @@ export default function Hero() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Text */}
-          <div className="flex flex-col space-y-8 text-white animate-fade-in">
-            <div className="inline-flex">
-              <p className="text-lg sm:text-xl px-4 py-2 border-2 border-white/50 rounded-full w-fit font-medium backdrop-blur-sm bg-white/10">
-                Hello There!
-              </p>
-            </div>
+          <div className="flex flex-col space-y-8 pt-6 text-white animate-fade-in">
+            
 
             <div className="space-y-4">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
