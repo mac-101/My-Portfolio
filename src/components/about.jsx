@@ -1,13 +1,17 @@
 import React from 'react'
 import { User, MapPin, Briefcase, Download, Code2, Database, Smartphone, CheckCircle } from 'lucide-react'
+import { motion, useReducedMotion } from 'framer-motion'
+import { fadeInLeft, fadeInRight } from '../utils/motionVariants'
+
 
 export default function About() {
+    const reduceMotion = useReducedMotion()
     const skills = [
-         {
+        {
             icon: <Code2 className="w-5 h-5" />,
             name: "HTML/CSS",
             level: "Advanced"
-        },{
+        }, {
             icon: <Code2 className="w-5 h-5" />,
             name: "React.js",
             level: "Advanced"
@@ -22,7 +26,7 @@ export default function About() {
             name: "Firebase",
             level: "Advanced"
         },
-       
+
         {
             icon: <Smartphone className="w-5 h-5" />,
             name: "Responsive Design",
@@ -34,82 +38,80 @@ export default function About() {
             level: "Advanced"
         }
     ]
-    //   const handleDownloadCV = () => {
-    //     // Method 1: Open in new tab
-    //     window.open(CV, '_blank')
-        
-    //     // OR Method 2: Force download
-    //     // const link = document.createElement('a')
-    //     // link.href = '/Charles_MacAnthony_CV.pdf'
-    //     // link.download = 'Charles_MacAnthony_CV.pdf'
-    //     // document.body.appendChild(link)
-    //     // link.click()
-    //     // document.body.removeChild(link)
-    // }
+
 
     return (
         <section id="about" className="py-16 px-3 bg-white">
             <div className="max-w-6xl mx-auto">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
-                    {/*  */}
-
                     {/* Content Section */}
-                        <div className="space-y-6">
-                            <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 text-blue-700 rounded-full text-sm font-semibold">
-                                <User className="w-4 h-4" />
-                                About Me
-                            </div>
+                    <motion.div
+                        variants={fadeInLeft}
+                        initial={reduceMotion ? { opacity: 1, y: 0 } : 'hidden'}
+                        whileInView={reduceMotion ? { opacity: 1, y: 0 } : 'visible'}
+                        viewport={{ once: true, amount: 0.2 }}
 
-                            <h2 className="text-3xl font-bold text-gray-900">
-                                Full Stack Developer <span className="text-blue-600">Specializing in React & Firebase</span>
-                            </h2>
-
-                            <p className="text-gray-600 leading-relaxed">
-                                I'm Charles MacAnthony, a passionate developer with 2+ years of experience building
-                                modern web applications. I focus on creating clean, efficient solutions using React
-                                for the frontend and Firebase for backend services.
-                            </p>
-
-                            <div className="space-y-4">
-                                <div className="flex items-center gap-3">
-                                    <MapPin className="w-5 h-5 text-blue-600" />
-                                    <span className="text-gray-700">Based in Abia, Nigeria</span>
-                                </div>
-                                <div className="flex items-center gap-3">
-                                    <Briefcase className="w-5 h-5 text-blue-600" />
-                                    <span className="text-gray-700">2+ years professional experience</span>
-                                </div>
-                            </div>
+                        className="space-y-6">
+                        <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 text-blue-700 rounded-full text-sm font-semibold">
+                            <User className="w-4 h-4" />
+                            About Me
                         </div>
 
-                        {/* Skills Section */}
-                        <div className="pt-6 border-t border-gray-200">
-                            <h3 className="text-xl font-bold text-gray-900 mb-6">Technical Skills</h3>
-                            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                                {skills.map((skill, index) => (
-                                    <div 
-                                        key={index}
-                                        className="bg-gray-50 p-4 rounded-lg border border-gray-200 hover:border-blue-300 transition-colors"
-                                    >
-                                        <div className="flex items-center gap-3 mb-2">
-                                            <div className="w-8 h-8 rounded-md bg-blue-100 text-blue-600 flex items-center justify-center">
-                                                {skill.icon}
-                                            </div>
-                                            <span className="font-medium text-gray-900">{skill.name}</span>
+                        <h2 className="text-3xl font-bold text-gray-900">
+                            Full Stack Developer <span className="text-blue-600">Specializing in React & Firebase</span>
+                        </h2>
+
+                        <p className="text-gray-600 leading-relaxed">
+                            I'm Charles MacAnthony, a passionate developer with 2+ years of experience building
+                            modern web applications. I focus on creating clean, efficient solutions using React
+                            for the frontend and Firebase for backend services.
+                        </p>
+
+                        <div className="space-y-4">
+                            <div className="flex items-center gap-3">
+                                <MapPin className="w-5 h-5 text-blue-600" />
+                                <span className="text-gray-700">Based in Abia, Nigeria</span>
+                            </div>
+                            <div className="flex items-center gap-3">
+                                <Briefcase className="w-5 h-5 text-blue-600" />
+                                <span className="text-gray-700">2+ years professional experience</span>
+                            </div>
+                        </div>
+                    </motion.div>
+
+                    {/* Skills Section */}
+                    <motion.div 
+                    variants={fadeInRight}
+                    initial={reduceMotion ? { opacity: 1, y: 0 } : 'hidden'}
+                    whileInView={reduceMotion ? { opacity: 1, y: 0 } : 'visible'}
+                    viewport={{ once: true, amount: 0.2 }}
+                    className="pt-6 border-t border-gray-200">
+                        <h3 className="text-xl font-bold text-gray-900 mb-6">Technical Skills</h3>
+                        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                            {skills.map((skill, index) => (
+                                <div
+                                    key={index}
+                                    className="bg-gray-50 p-4 rounded-lg border border-gray-200 hover:border-blue-300 transition-colors"
+                                >
+                                    <div className="flex items-center gap-3 mb-2">
+                                        <div className="w-8 h-8 rounded-md bg-blue-100 text-blue-600 flex items-center justify-center">
+                                            {skill.icon}
                                         </div>
-                                        <div className="flex items-center gap-2">
-                                            <CheckCircle className="w-4 h-4 text-green-500" />
-                                            <span className="text-sm text-gray-600">{skill.level}</span>
-                                        </div>
+                                        <span className="font-medium text-gray-900">{skill.name}</span>
                                     </div>
-                                ))}
-                            </div>
+                                    <div className="flex items-center gap-2">
+                                        <CheckCircle className="w-4 h-4 text-green-500" />
+                                        <span className="text-sm text-gray-600">{skill.level}</span>
+                                    </div>
+                                </div>
+                            ))}
                         </div>
+                    </motion.div>
 
-                        {/* CTA */}
-                        <div className="pt-4">
-                        <a 
+                    {/* CTA */}
+                    <div className="pt-4">
+                        <a
                             href="/public/Charles_MacAnthony_CV.pdf.pdf"
                             download="Charles_MacAnthony_Resume.pdf"
                             target="_blank"
@@ -120,9 +122,9 @@ export default function About() {
                             Download Resume
                         </a>
                     </div>
-                    </div>
-
                 </div>
+
+            </div>
         </section>
     )
 }

@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import pic from "../assets/pic.jpg";
 import pic2 from "../assets/pic-6.jpeg";
+import { motion, useReducedMotion } from "framer-motion";
+import { fadeIn, fadeInLeft } from "../utils/motionVariants";
 
 export default function Hero() {
   const roles = [
@@ -10,6 +12,7 @@ export default function Hero() {
     "UI/UX Focused Builder",
   ];
 
+  const reduceMotion = useReducedMotion();
   const [currentRole, setCurrentRole] = useState(0);
 
   useEffect(() => {
@@ -57,9 +60,13 @@ export default function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Text */}
           <div className="flex flex-col space-y-8 pt-6 text-white animate-fade-in">
-            
 
-            <div className="space-y-4">
+
+            <motion.div
+              variants={fadeIn}
+              initial={reduceMotion ? { opacity: 1, y: 0 } : 'hidden'}
+              whileInView={reduceMotion ? { opacity: 1, y: 0 } : 'visible'}
+              viewport={{ once: true, amount: 0.2 }} className="space-y-4">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
                 I'm{" "}
                 <span className="font-serif text-blue-300">
@@ -77,23 +84,31 @@ export default function Hero() {
                 responsive, and high-performance web experiences using today’s
                 best technologies.
               </p>
-            </div>
+            </motion.div>
 
             {/* Buttons */}
             <div className="flex flex-wrap gap-4">
-              <button
+              <motion.button
+                variants={fadeInLeft}
+                initial={reduceMotion ? { opacity: 1, y: 0 } : 'hidden'}
+                whileInView={reduceMotion ? { opacity: 1, y: 0 } : 'visible'}
+                viewport={{ once: true, amount: 0.2 }}
                 onClick={handleViewPortfolio}
                 className="px-8 py-3 text-lg font-semibold bg-blue-600 hover:bg-blue-700 rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-xl shadow-blue-500/30"
               >
                 View My Portfolio
-              </button>
+              </motion.button>
 
-              <button
+              <motion.button
+                variants={fadeInLeft}
+                initial={reduceMotion ? { opacity: 1, y: 0 } : 'hidden'}
+                whileInView={reduceMotion ? { opacity: 1, y: 0 } : 'visible'}
+                viewport={{ once: true, amount: 0.2 }}
                 onClick={handleHireMe}
                 className="px-8 py-3 text-lg font-semibold bg-transparent border-2 border-white hover:bg-white/10 rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-xl"
               >
                 Hire Me
-              </button>
+              </motion.button>
             </div>
 
             {/* Stats */}
@@ -135,6 +150,6 @@ export default function Hero() {
           <div className="w-1 h-3 bg-white/70 rounded-full mt-2"></div>
         </div>
       </div>
-    </div>
+    </div >
   );
 }

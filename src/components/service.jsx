@@ -1,5 +1,7 @@
 import React from 'react'
-import { Code2, Database, Smartphone, Zap, CheckCircle, Clock, TrendingUp } from 'lucide-react'
+import { motion, useReducedMotion } from 'framer-motion'
+import { fadeUp, fadeIn } from '../utils/motionVariants'
+import { Code2, Database, Smartphone, Zap, CheckCircle, Clock, TrendingUp } from 'lucide-react' 
 
 export default function Services() {
     const services = [
@@ -30,6 +32,8 @@ export default function Services() {
         "Increase business credibility"
     ]
 
+    const reduceMotion = useReducedMotion()
+
     return (
         <section id="services" className="py-16 px-2 bg-white">
             <div className="max-w-6xl mx-auto">
@@ -50,8 +54,13 @@ export default function Services() {
                 {/* Services Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
                     {services.map((service, index) => (
-                        <div
+                        <motion.div
                             key={index}
+                            variants={fadeUp}
+                            custom={index}
+                            initial={reduceMotion ? { opacity: 1, y: 0 } : 'hidden'}
+                            whileInView={reduceMotion ? { opacity: 1, y: 0 } : 'visible'}
+                            viewport={{ once: true, amount: 0.2 }}
                             className="bg-white p-8 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-all hover:border-blue-300"
                         >
                             <div className="w-14 h-14 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center mb-6">
@@ -67,14 +76,19 @@ export default function Services() {
                                     </div>
                                 ))}
                             </div>
-                        </div>
+                        </motion.div>
                     ))}
                 </div>
 
                 {/* Benefits & Process */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
                     {/* Left - Benefits */}
-                    <div>
+                    <motion.div
+                        variants={fadeIn}
+                        initial={reduceMotion ? { opacity: 1, x: 0 } : 'hidden'}
+                        whileInView={reduceMotion ? { opacity: 1, x: 0 } : 'visible'}
+                        viewport={{ once: true, amount: 0.2 }}
+                        >
                         <h3 className="text-2xl font-bold text-gray-900 mb-6">
                             Why Your Business Needs a Website
                         </h3>
@@ -86,7 +100,7 @@ export default function Services() {
                                 </div>
                             ))}
                         </div>
-                    </div>
+                    </motion.div>
 
                     {/* Right - How It Works */}
                     <div className="bg-linear-to-br from-blue-50 to-blue-100 rounded-2xl p-8">

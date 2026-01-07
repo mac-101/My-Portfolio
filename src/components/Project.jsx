@@ -1,5 +1,7 @@
 import React from 'react'
 import { ExternalLink, Github, Sparkles, Eye, CheckCircle, Target, Users, BarChart, Zap, Shield, Database, ArrowUpRight } from 'lucide-react'
+import { fadeUp } from '../utils/motionVariants'
+import { motion, useReducedMotion } from 'framer-motion'
 
 // Import your project images
 import ecommerceImg from '../assets/school (2).png'
@@ -8,6 +10,9 @@ import voting from '../assets/school (4).png'
 import business from '../assets/school (3).png'
 
 export default function Projects() {
+
+  const reduceMotion = useReducedMotion()
+
   const projects = [
     {
       title: "E-Commerce Platform",
@@ -262,12 +267,18 @@ export default function Projects() {
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project, index) => (
-              <div 
+              <motion.div
+                  variants={fadeUp}
+                  custom={index}
+                  initial={reduceMotion ? { opacity: 1, y: 0 } : 'hidden'}
+                  whileInView={reduceMotion ? { opacity: 1, y: 0 } : 'visible'}
+                  viewport={{ once: true, amount: 0.2 }}
                 key={index}
                 className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow border border-gray-200 group"
               >
                 {/* Project Image */}
-                <div className="h-48 relative overflow-hidden bg-gray-100">
+                <div 
+                  className="h-48 relative overflow-hidden bg-gray-100">
                   {project.image ? (
                     <img 
                       src={project.image}
@@ -340,7 +351,7 @@ export default function Projects() {
                     </a>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
