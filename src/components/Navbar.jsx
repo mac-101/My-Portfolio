@@ -7,8 +7,8 @@ export function Navbar() {
 
   const navItems = [
     { id: "home", label: "Home" },
-    { id: "services", label: "Services" },
     { id: "about", label: "About" },
+    { id: "services", label: "Services" },
     { id: "projects", label: "Projects" },
     { id: "contact", label: "Contact" }
   ]
