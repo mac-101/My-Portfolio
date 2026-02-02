@@ -113,7 +113,7 @@ export default function Hero() {
           </div>
 
           {/* Image */}
-          <div className="relative flex justify-center reveal" data-animation="rotate-up" data-delay="2s">
+          <div className="relative flex justify-center reveal" data-animation="rotate-up" data-delay="0.5">
             <div className="relative w-60 h-70 sm:w-70 sm:h-90 lg:w-80 lg:h-110  overflow-hidden rotate-20 shadow-2xl">
               <img
                 src={pic}
