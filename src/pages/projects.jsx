@@ -46,6 +46,7 @@ export default function ProjectLibrary() {
           <h2 className="text-4xl md:text-6xl font-black text-slate-900 tracking-tighter uppercase">
             Build <span className="text-slate-400 font-medium italic">Archive</span>
           </h2>
+          <p className='pt-2'>{projects.length} Projects </p>
         </div>
 
         {/* Project Grid */}
