@@ -112,7 +112,7 @@ export default function Projects() {
         <p className="text-gray-600 mb-6">Interested in more projects and collaborations?</p>
         <Link to="/projects" className="inline-block">
           <span className="inline-flex items-center gap-2 px-8 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-all font-medium active:scale-95 cursor-pointer shadow-lg">
-            Explore Archive
+            Explore Projects
           </span>
         </Link>
       </div>
