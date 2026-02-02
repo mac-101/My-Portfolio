@@ -1,7 +1,8 @@
 import React from 'react'
-import { Github, Globe } from 'lucide-react'
+import { Github, Globe, ArrowLeft } from 'lucide-react'
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 
 // Import existing images
 import ecommerceImg from '../assets/school (2).png'
@@ -23,21 +24,24 @@ export default function ProjectLibrary() {
     { title: "WeatherPro", category: "Utility", description: "Location-based weather forecasting with dynamic backgrounds.", tags: ["OpenWeather", "React"], link: "#", github: "#", image: voting }
   ];
 
+  const navigate = useNavigate()
   const pathname = useLocation()
+
+  const back = () => navigate("/")
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [pathname]); 
+  }, [pathname]);
 
   return (
     <section id="library" className="py-20 px-4 bg-[#fafafa] overflow-hidden">
       <div className="max-w-7xl mx-auto">
-        
+
         {/* Header - Animated with Fade-Up */}
         <div className="mb-16 reveal" data-animation="fade-up">
-          <div className="flex items-center gap-2 mb-4">
-             <div className="h-px w-8 bg-blue-600"></div>
-             <span className="text-xs font-black uppercase tracking-widest text-blue-600">Project Library</span>
+          <div onClick={back} className="flex cursor-pointer items-center gap-2 mb-4">
+            <ArrowLeft className="w-4 h-4 text-blue-600" />
+            <span className="text-xs font-black uppercase tracking-widest text-blue-600">Back</span>
           </div>
           <h2 className="text-4xl md:text-6xl font-black text-slate-900 tracking-tighter uppercase">
             Build <span className="text-slate-400 font-medium italic">Archive</span>
@@ -47,16 +51,16 @@ export default function ProjectLibrary() {
         {/* Project Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            <div 
-              key={index} 
+            <div
+              key={index}
               // Added: reveal class, staggered delay, and rotate-up animation
               className="reveal group flex flex-col bg-white rounded-3xl border border-slate-200 overflow-hidden hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-500"
               data-animation="rotate-up"
               data-delay={`${(index % 3) * 0.15}s`} // Staggers by column (0s, 0.15s, 0.3s)
             >
               <div className="relative aspect-[16/10] overflow-hidden bg-slate-100">
-                <img 
-                  src={project.image} 
+                <img
+                  src={project.image}
                   alt={project.title}
                   loading="lazy"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
@@ -104,9 +108,13 @@ export default function ProjectLibrary() {
         <div className="reveal mt-20 p-12 bg-slate-900 rounded-[3rem] text-center" data-animation="zoom-in">
           <h4 className="text-white text-2xl font-black uppercase mb-4 tracking-tighter">Ready to start something new?</h4>
           <p className="text-slate-400 text-sm mb-8 max-w-md mx-auto">Open for collaborations on Healthcare, Fintech, and Real-time application systems.</p>
-          <button className="px-10 py-4 bg-blue-600 text-white font-black uppercase text-xs tracking-widest rounded-2xl hover:bg-white hover:text-slate-900 transition-all">
+          <button
+            onClick={() => window.open("https://wa.me/2349161489807", "_blank")}
+            className="px-10 py-4 bg-blue-600 text-white font-black uppercase text-xs tracking-widest rounded-2xl hover:bg-white hover:text-slate-900 transition-all"
+          >
             Drop a message
           </button>
+
         </div>
       </div>
     </section>
