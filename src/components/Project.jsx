@@ -1,5 +1,5 @@
 import React from 'react'
-import { ExternalLink, Github, ArrowUpRight, Sparkles, Eye } from 'lucide-react'
+import { ExternalLink, ArrowUpRight, Sparkles, Eye } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import ecommerceImg from '../assets/school (2).png'
 import schoolSite from '../assets/school (1).png'
@@ -112,8 +112,7 @@ export default function Projects() {
         <p className="text-gray-600 mb-6">Interested in more projects and collaborations?</p>
         <Link to="/projects" className="inline-block">
           <span className="inline-flex items-center gap-2 px-8 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-all font-medium active:scale-95 cursor-pointer shadow-lg">
-            <Github className="w-5 h-5" />
-            Explore Project Archive
+            Explore Archive
           </span>
         </Link>
       </div>
