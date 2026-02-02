@@ -1,5 +1,5 @@
 import React from 'react'
-import { ExternalLink, ArrowUpRight, Sparkles, Eye } from 'lucide-react'
+import { ExternalLink, Github, ArrowUpRight, Sparkles, Eye } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import ecommerceImg from '../assets/school (2).png'
 import schoolSite from '../assets/school (1).png'
