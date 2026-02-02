@@ -6,32 +6,33 @@ function App() {
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
+        const el = entry.target;
+        const animation = el.dataset.animation || 'fade-in-up';
+
         if (entry.isIntersecting) {
-          const el = entry.target;
-          
-          // Get settings from data attributes
-          const animation = el.dataset.animation || 'fade-in-up';
+          // FORWARD: Add classes to animate in
           const delay = el.dataset.delay || '0s';
           const duration = el.dataset.duration || '0.6s';
 
-          // Apply styles
           el.style.animationDelay = delay;
           el.style.animationDuration = duration;
-          
-          // Add the CSS class to trigger the @keyframes
+
           el.classList.add(animation);
-          el.classList.add('opacity-100'); // Ensure it becomes visible
-          
-          // Stop watching once animated (best for performance)
-          observer.unobserve(el);
+          el.classList.add('opacity-100');
+        } else {
+          // BACKWARD: Remove classes to reset the state
+          el.classList.remove(animation);
+          el.classList.remove('opacity-100');
+
+          // Optional: Reset styles so they don't interfere with the next entry
+          el.style.animationDelay = '0s';
         }
       });
-    }, { 
-      threshold: 0.20, // Trigger when 15% of the element is visible
-      rootMargin: '0px 0px -50px 0px' // Triggers slightly before it enters the viewport
+    }, {
+      threshold: 0.20,
+      rootMargin: '0px 0px -50px 0px'
     });
 
-    // Watch everything with the "reveal" class
     const elements = document.querySelectorAll('.reveal');
     elements.forEach(el => observer.observe(el));
 
@@ -40,7 +41,7 @@ function App() {
 
   return (
     <div className="App">
-      <Home/>  
+      <Home />
     </div>
   );
 }
