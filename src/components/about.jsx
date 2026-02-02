@@ -45,7 +45,7 @@ export default function About() {
                     {/* Content Section */}
                     <div
 
-                        className="space-y-6">
+                        className="space-y-6 reveal" data-animation="fade-up">
                         <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 text-blue-700 rounded-full text-sm font-semibold">
                             <User className="w-4 h-4" />
                             About Me
@@ -74,14 +74,14 @@ export default function About() {
                     </div>
 
                     {/* Skills Section */}
-                    <div 
-                    className="pt-6 border-t border-gray-200">
+                    <div
+                        className="pt-6 border-t border-gray-200">
                         <h3 className="text-xl font-bold text-gray-900 mb-6">Technical Skills</h3>
                         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                             {skills.map((skill, index) => (
                                 <div
                                     key={index}
-                                    className="bg-gray-50 p-4 rounded-lg border border-gray-200 hover:border-blue-300 transition-colors"
+                                    className="bg-gray-50 p-4 rounded-lg border border-gray-200 hover:border-blue-300 transition-colors reveal" data-animation="pop-in"
                                 >
                                     <div className="flex items-center gap-3 mb-2">
                                         <div className="w-8 h-8 rounded-md bg-blue-100 text-blue-600 flex items-center justify-center">

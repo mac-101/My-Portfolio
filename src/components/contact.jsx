@@ -31,7 +31,8 @@ export default function Contact() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Contact Info */}
-          <div className="space-y-6">
+          <div className="space-y-6 reveal" 
+        data-animation="fade-right">
             <div className="space-y-4">
               <div className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-blue-600" />
@@ -63,7 +64,9 @@ export default function Contact() {
                     href={social.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-3 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors"
+                    className="p-3 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors reveal" 
+                    data-animation="pop-in"
+                    data-delay={`${index * 0.1}s`}
                     title={social.name}
                   >
                     {social.icon}
@@ -74,7 +77,8 @@ export default function Contact() {
           </div>
 
           {/* WhatsApp Quick Contact */}
-          <div className="bg-green-50 p-6 rounded-xl border border-green-200">
+          <div className="bg-green-50 p-6 rounded-xl border border-green-200 reveal" 
+        data-animation="pop-in" data-delay="0.2s">
             <h3 className="font-bold text-gray-900 mb-4">Quick Response</h3>
             <p className="text-gray-600 mb-6 text-sm">
               For fastest reply, message me on WhatsApp

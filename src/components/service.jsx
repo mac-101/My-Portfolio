@@ -30,7 +30,7 @@ export default function Services() {
         <section id="services" className="py-16 px-2 bg-white">
             <div className="max-w-6xl mx-auto">
                 {/* Header */}
-                <div className="text-center mb-12">
+                <div className="text-center mb-12 reveal" data-animation="fade-up">
                     <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-semibold mb-4">
                         <Zap className="w-4 h-4" />
                         Services for Your Business
@@ -48,7 +48,7 @@ export default function Services() {
                     {services.map((service, index) => (
                         <div
                             key={index}
-                            className="bg-white p-8 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-all hover:border-blue-300"
+                            className="bg-white p-8 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-all hover:border-blue-300 reveal" data-animation="zoom-in" data-delay={`${index * 0.1}s`}
                         >
                             <div className="w-14 h-14 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center mb-6">
                                 {service.icon}
@@ -70,7 +70,7 @@ export default function Services() {
                 
 
                 {/* CTA */}
-                <div className="mt-12 text-center">
+                <div className="mt-12 text-center reveal" data-animation="pop-in">
                     <a
                         href="https://wa.me/2349161489807?text=Hello%20Charles!%20I'm%20interested%20in%20your%20web%20development%20services.%20Can%20we%20discuss%20my%20project%20requirements?"
                         target="_blank"

@@ -54,9 +54,9 @@ export default function Hero() {
 
       {/* Content */}
       <div className=" mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-12 py-30 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-12 py-30 items-center ">
           {/* Text */}
-          <div className="flex flex-col space-y-8 pt-15 text-white animate-fade-in">
+          <div className="flex flex-col space-y-8 pt-15 text-white animate-fade-in reveal" data-animation="fade-right">
             
             <div>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
@@ -113,7 +113,7 @@ export default function Hero() {
           </div>
 
           {/* Image */}
-          <div className="relative flex justify-center ">
+          <div className="relative flex justify-center reveal" data-animation="rotate-up" data-delay="2s">
             <div className="relative w-60 h-70 sm:w-70 sm:h-90 lg:w-80 lg:h-110  overflow-hidden rotate-20 shadow-2xl">
               <img
                 src={pic}
