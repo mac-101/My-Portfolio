@@ -1,13 +1,10 @@
 import { useState, useEffect } from "react"
-import { motion, useReducedMotion } from "framer-motion"
 
-import { fadeInLeft } from "../utils/motionVariants"
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [activeSection, setActiveSection] = useState("home")
-  const reduceMotion = useReducedMotion()
   const navItems = [
     { id: "home", label: "Home" },
     { id: "about", label: "About" },
@@ -50,7 +47,7 @@ export function Navbar() {
   return (
     <>
       {/* Floating Navbar Container */}
-      <motion.div className={`w-full px-4 md:px-6 z-50 flex justify-center fixed top-4 transition-all duration-300 ${isScrolled ? 'scale-95' : ''
+      <div className={`w-full px-4 md:px-6 z-50 flex justify-center fixed top-4 transition-all duration-300 ${isScrolled ? 'scale-95' : ''
         }`}>
         <nav className={`flex w-full max-w-4xl justify-between items-center py-3 px-6 rounded-full shadow-2xl transition-all duration-300 ${isScrolled
             ? 'bg-white/95 backdrop-blur-lg shadow-xl border border-gray-200/30'
@@ -76,12 +73,7 @@ export function Navbar() {
           {/* Desktop Navigation */}
           <ul className="hidden md:flex font-medium gap-6 lg:gap-8 items-center">
             {navItems.slice(0, -1).map((item) => (
-              <motion.li
-                variants={fadeInLeft}
-                custom={navItems.indexOf(item)}
-                initial={reduceMotion ? { opacity: 1, x: 0 } : 'hidden'}
-                whileInView={reduceMotion ? { opacity: 1, x: 0 } : 'visible'}
-                viewport={{ once: true, amount: 0.2 }}
+              <li
 
                 className={`relative cursor-pointer transition-all duration-300 py-2 px-1 ${isScrolled ? 'text-gray-700 hover:text-blue-600' : 'text-white/90 hover:text-white'
                   } ${activeSection === item.id ? (isScrolled ? 'text-blue-600' : 'text-white') : ''}`}
@@ -92,7 +84,7 @@ export function Navbar() {
                   <span className={`absolute bottom-0 left-0 w-full h-1 rounded-full ${isScrolled ? 'bg-blue-500' : 'bg-white'
                     } animate-pulse`}></span>
                 )}
-              </motion.li>
+              </li>
             ))}
           </ul>
 
@@ -120,7 +112,7 @@ export function Navbar() {
               } ${isMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
           </button>
         </nav>
-      </motion.div>
+      </div>
 
       {/* Mobile Menu Overlay */}
       <div className={`fixed inset-0  z-40 md:hidden transition-all duration-300 ${isMenuOpen
@@ -159,14 +151,14 @@ export function Navbar() {
       </div>
 
       {/* Scroll Progress Bar */}
-      <div className="fixed top-0 left-0 right-0 h-1 z-50">
+      {/* <div className="fixed top-0 left-0 right-0 h-1 z-50">
         <div
           className="h-full bg-linear-to-r from-blue-500 to-purple-500 transition-all duration-300"
           style={{
             width: `${Math.min((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100, 100)}%`
           }}
         />
-      </div>
+      </div> */}
     </>
   )
 }

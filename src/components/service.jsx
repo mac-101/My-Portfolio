@@ -1,6 +1,4 @@
 import React from 'react'
-import { motion, useReducedMotion } from 'framer-motion'
-import { fadeUp, fadeIn } from '../utils/motionVariants'
 import { Code2, Database, Smartphone, Zap, CheckCircle, Clock, TrendingUp } from 'lucide-react' 
 
 export default function Services() {
@@ -25,14 +23,8 @@ export default function Services() {
         }
     ]
 
-    const benefits = [
-        "Get a professional online presence",
-        "Reach more customers 24/7",
-        "Showcase your products/services",
-        "Increase business credibility"
-    ]
+    
 
-    const reduceMotion = useReducedMotion()
 
     return (
         <section id="services" className="py-16 px-2 bg-white">
@@ -54,13 +46,8 @@ export default function Services() {
                 {/* Services Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
                     {services.map((service, index) => (
-                        <motion.div
+                        <div
                             key={index}
-                            variants={fadeUp}
-                            custom={index}
-                            initial={reduceMotion ? { opacity: 1, y: 0 } : 'hidden'}
-                            whileInView={reduceMotion ? { opacity: 1, y: 0 } : 'visible'}
-                            viewport={{ once: true, amount: 0.2 }}
                             className="bg-white p-8 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-all hover:border-blue-300"
                         >
                             <div className="w-14 h-14 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center mb-6">
@@ -76,66 +63,11 @@ export default function Services() {
                                     </div>
                                 ))}
                             </div>
-                        </motion.div>
+                        </div>
                     ))}
                 </div>
 
-                {/* Benefits & Process */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                    {/* Left - Benefits */}
-                    <motion.div
-                        variants={fadeIn}
-                        initial={reduceMotion ? { opacity: 1, x: 0 } : 'hidden'}
-                        whileInView={reduceMotion ? { opacity: 1, x: 0 } : 'visible'}
-                        viewport={{ once: true, amount: 0.2 }}
-                        >
-                        <h3 className="text-2xl font-bold text-gray-900 mb-6">
-                            Why Your Business Needs a Website
-                        </h3>
-                        <div className="space-y-4">
-                            {benefits.map((benefit, index) => (
-                                <div key={index} className="flex items-start gap-3">
-                                    <TrendingUp className="w-5 h-5 text-blue-600 mt-1" />
-                                    <p className="text-gray-700">{benefit}</p>
-                                </div>
-                            ))}
-                        </div>
-                    </motion.div>
-
-                    {/* Right - How It Works */}
-                    <div className="bg-linear-to-br from-blue-50 to-blue-100 rounded-2xl p-8">
-                        <h3 className="text-2xl font-bold text-gray-900 mb-6">
-                            Simple Process to Get Started
-                        </h3>
-                        <div className="space-y-6">
-                            {[
-                                { step: "1", title: "Tell Me Your Idea", desc: "We discuss what you need" },
-                                { step: "2", title: "Design & Development", desc: "I build your site" },
-                                { step: "3", title: "Launch & Support", desc: "Your site goes live" }
-                            ].map((item) => (
-                                <div key={item.step} className="flex items-center gap-4">
-                                    <div className="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold">
-                                        {item.step}
-                                    </div>
-                                    <div>
-                                        <h4 className="font-bold text-gray-900">{item.title}</h4>
-                                        <p className="text-gray-600 text-sm">{item.desc}</p>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-
-                        <div className="mt-8 p-4 bg-white rounded-xl border border-blue-200">
-                            <div className="flex items-center gap-3">
-                                <Clock className="w-5 h-5 text-blue-600" />
-                                <div>
-                                    <p className="font-medium text-gray-900">Ready to Start?</p>
-                                    <p className="text-gray-600 text-sm">Most basic sites take 1-2 weeks to complete</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                
 
                 {/* CTA */}
                 <div className="mt-12 text-center">

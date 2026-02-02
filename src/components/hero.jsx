@@ -1,18 +1,15 @@
 import React, { useEffect, useState } from "react";
 import pic from "../assets/pic.jpg";
 import pic2 from "../assets/pic-6.jpeg";
-import { motion, useReducedMotion } from "framer-motion";
-import { fadeIn, fadeInLeft } from "../utils/motionVariants";
 
 export default function Hero() {
   const roles = [
-    "Professional Web Developer",
+    "Web Developer",
     "Frontend Engineer",
     "React Developer",
-    "UI/UX Focused Builder",
+    "UI/UX Focused Builder"
   ];
 
-  const reduceMotion = useReducedMotion();
   const [currentRole, setCurrentRole] = useState(0);
 
   useEffect(() => {
@@ -39,7 +36,7 @@ export default function Hero() {
   return (
     <div
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 pb-5 md:pt-20"
+      className="relative min-h-dvh flex items-center justify-center overflow-hidden "
     >
       {/* Background */}
       <div className="fixed inset-0 -z-40">
@@ -56,17 +53,12 @@ export default function Hero() {
       </div>
 
       {/* Content */}
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div className=" mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-12 py-30 items-center">
           {/* Text */}
-          <div className="flex flex-col space-y-8 pt-6 text-white animate-fade-in">
-
-
-            <motion.div
-              variants={fadeIn}
-              initial={reduceMotion ? { opacity: 1, y: 0 } : 'hidden'}
-              whileInView={reduceMotion ? { opacity: 1, y: 0 } : 'visible'}
-              viewport={{ once: true, amount: 0.2 }} className="space-y-4">
+          <div className="flex flex-col space-y-8 pt-15 text-white animate-fade-in">
+            
+            <div>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
                 I'm{" "}
                 <span className="font-serif text-blue-300">
@@ -79,37 +71,30 @@ export default function Hero() {
                 {roles[currentRole]}
               </h2>
 
-              <p className="text-gray-200 max-w-xl text-lg leading-relaxed">
+              <p className="text-gray-200 pt-5 max-w-xl text-lg leading-relaxed">
                 I help individuals and businesses turn ideas into modern,
                 responsive, and high-performance web experiences using today’s
                 best technologies.
               </p>
-            </motion.div>
+              
+            </div>
 
             {/* Buttons */}
-            <div className="flex flex-wrap gap-4">
-              <motion.button
-                variants={fadeInLeft}
-                initial={reduceMotion ? { opacity: 1, y: 0 } : 'hidden'}
-                whileInView={reduceMotion ? { opacity: 1, y: 0 } : 'visible'}
-                viewport={{ once: true, amount: 0.2 }}
+            {/* <div className="flex flex-wrap gap-4">
+              <button
                 onClick={handleViewPortfolio}
                 className="px-8 py-3 text-lg font-semibold bg-blue-600 hover:bg-blue-700 rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-xl shadow-blue-500/30"
               >
                 View My Portfolio
-              </motion.button>
+              </button>
 
-              <motion.button
-                variants={fadeInLeft}
-                initial={reduceMotion ? { opacity: 1, y: 0 } : 'hidden'}
-                whileInView={reduceMotion ? { opacity: 1, y: 0 } : 'visible'}
-                viewport={{ once: true, amount: 0.2 }}
+              <button
                 onClick={handleHireMe}
                 className="px-8 py-3 text-lg font-semibold bg-transparent border-2 border-white hover:bg-white/10 rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-xl"
               >
                 Hire Me
-              </motion.button>
-            </div>
+              </button>
+            </div> */}
 
             {/* Stats */}
             <div className="flex items-center gap-6 pt-4">
@@ -128,8 +113,8 @@ export default function Hero() {
           </div>
 
           {/* Image */}
-          <div className="relative flex justify-center lg:justify-end">
-            <div className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-white/20 shadow-2xl">
+          <div className="relative flex justify-center ">
+            <div className="relative w-60 h-70 sm:w-70 sm:h-90 lg:w-80 lg:h-110  overflow-hidden rotate-20 shadow-2xl">
               <img
                 src={pic}
                 alt="Charles MacAnthony"

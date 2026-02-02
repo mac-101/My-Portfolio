@@ -1,11 +1,8 @@
 import React from 'react'
 import { User, MapPin, Briefcase, Download, Code2, Database, Smartphone, CheckCircle } from 'lucide-react'
-import { motion, useReducedMotion } from 'framer-motion'
-import { fadeInLeft, fadeInRight } from '../utils/motionVariants'
 
 
 export default function About() {
-    const reduceMotion = useReducedMotion()
     const skills = [
         {
             icon: <Code2 className="w-5 h-5" />,
@@ -46,11 +43,7 @@ export default function About() {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
                     {/* Content Section */}
-                    <motion.div
-                        variants={fadeInLeft}
-                        initial={reduceMotion ? { opacity: 1, y: 0 } : 'hidden'}
-                        whileInView={reduceMotion ? { opacity: 1, y: 0 } : 'visible'}
-                        viewport={{ once: true, amount: 0.2 }}
+                    <div
 
                         className="space-y-6">
                         <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 text-blue-700 rounded-full text-sm font-semibold">
@@ -78,14 +71,10 @@ export default function About() {
                                 <span className="text-gray-700">2+ years professional experience</span>
                             </div>
                         </div>
-                    </motion.div>
+                    </div>
 
                     {/* Skills Section */}
-                    <motion.div 
-                    variants={fadeInRight}
-                    initial={reduceMotion ? { opacity: 1, y: 0 } : 'hidden'}
-                    whileInView={reduceMotion ? { opacity: 1, y: 0 } : 'visible'}
-                    viewport={{ once: true, amount: 0.2 }}
+                    <div 
                     className="pt-6 border-t border-gray-200">
                         <h3 className="text-xl font-bold text-gray-900 mb-6">Technical Skills</h3>
                         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
@@ -107,7 +96,7 @@ export default function About() {
                                 </div>
                             ))}
                         </div>
-                    </motion.div>
+                    </div>
 
                     {/* CTA */}
                     <div className="pt-4">
