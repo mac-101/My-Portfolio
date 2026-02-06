@@ -1,9 +1,9 @@
 import React from 'react'
 import { ExternalLink, Github, ArrowUpRight, Sparkles, Eye } from 'lucide-react'
 import { Link } from 'react-router-dom'
-import healthcore from '../assets/healthcoretech.netlify.app_.png'
+import healthcore from '../assets/healthcoretech.png'
 import schoolSite from '../assets/school (1).png'
-import fastfood from '../assets/tastybitefastfood.netlify.app_.png'
+import fastfood from '../assets/tastybitefastfood.png'
 import voting from '../assets/school (4).png'
 
 export default function Projects() {
