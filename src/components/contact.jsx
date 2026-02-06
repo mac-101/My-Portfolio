@@ -1,5 +1,5 @@
 import React from 'react'
-import { Mail, Phone, MapPin, Github,Twitter, Instagram, Linkedin } from 'lucide-react'
+import { Mail, Phone, MapPin, Github, Linkedin } from 'lucide-react'
 
 export default function Contact() {
   const socials = [

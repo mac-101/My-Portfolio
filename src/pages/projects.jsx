@@ -6,9 +6,9 @@ import { useNavigate } from 'react-router-dom';
 
 // Import existing images
 import ecommerceImg from '../assets/school (2).png'
-import healthcore from '../assets/healthcoretech.netlify.app_.png'
+import healthcore from '../assets/healthcoretech.png'
 import schoolSite from '../assets/school (1).png'
-import fastfood from '../assets/tastybitefastfood.netlify.app_.png'
+import fastfood from '../assets/tastybitefastfood.png'
 import business from '../assets/school (3).png'
 import voting from '../assets/school (4).png'
 
