@@ -6,22 +6,54 @@ import { useNavigate } from 'react-router-dom';
 
 // Import existing images
 import ecommerceImg from '../assets/school (2).png'
+import healthcore from '../assets/healthcoretech.netlify.app_.png'
 import schoolSite from '../assets/school (1).png'
-import voting from '../assets/school (4).png'
+import fastfood from '../assets/tastybitefastfood.netlify.app_.png'
 import business from '../assets/school (3).png'
+import voting from '../assets/school (4).png'
+
 
 export default function ProjectLibrary() {
   const projects = [
-    { title: "HealthCore V1", category: "Healthcare OS", description: "Comprehensive medical ecosystem with real-time doctor/patient sync.", tags: ["Firebase", "React", "Realtime DB"], link: "#", github: "#", image: business },
-    { title: "VoteLinkr", category: "Real-time App", description: "Instant voting platform for contests with live leaderboard updates.", tags: ["Firestore", "Tailwind", "Auth"], link: "http://votelinkr-ui.netlify.app", github: "https://github.com/mac-101", image: voting },
+    {
+      title: "HealthCore Tech",
+      category: "Healthcare OS",
+      description: "Full-featured online healthcare platform for specialist discovery, and appointment scheduling",
+      tags: ["React", "Firebase", "Rest Api", "Tailwind"],
+      image: healthcore,
+      link: "http://healthcoretech.netlify.app",
+      github: "https://github.com/mac-101"
+    },
+    {
+      title: "TastyBite Fast Food",
+      category: "Fast Food",
+      description: "Modern fast food delivery platform with menu management and order tracking",
+      tags: ["Html", "CSS", "JavaScript", "Tailwind"],
+      image: fastfood,
+      link: "http://tastybitefastfood.netlify.app",
+      github: "https://github.com/mac-101"
+    },
+    {
+      title: "Clever School",
+      category: "Education",
+      description: "A school online presence and management platform",
+      tags: ["Html", "API", "CSS", "JavaScript"],
+      image: schoolSite,
+      link: "http://cleverschool.netlify.app",
+      github: "https://github.com/mac-101"
+    },
+    { title: "FinTrack", category: "Fintech", description: "Personal expense tracker with data visualization and goal setting.", tags: ["React", "Chart.js"], link: "smartbiz-os.netlify.app", github: "https://github.com/mac-101", image: business },
+    
+    {
+      title: "VoteLinkr",
+      category: "Voting App",
+      description: "Real-time voting application for contests and competitions",
+      tags: ["Firestore", "Tailwind", "Firebase Auth", "React", "Context API"],
+      image: voting,
+      link: "http://votelinkr-ui.netlify.app",
+      github: "https://github.com/mac-101"
+    },
     { title: "ShopCart", category: "E-Commerce", description: "Modern retail experience with full cart logic and admin inventory tools.", tags: ["React", "API", "Redux"], link: "http://shopcart-demo.netlify.app", github: "https://github.com/mac-101", image: ecommerceImg },
-    { title: "CleverSchool", category: "EdTech", description: "Portal for student management, grading, and online presence.", tags: ["HTML", "CSS", "JS"], link: "http://cleverschool.netlify.app", github: "https://github.com/mac-101", image: schoolSite },
-    { title: "FinTrack", category: "Fintech", description: "Personal expense tracker with data visualization and goal setting.", tags: ["React", "Chart.js"], link: "#", github: "#", image: business },
-    { title: "SocialPulse", category: "Social Media", description: "Minimalist social feed with image uploads and real-time comments.", tags: ["Cloudinary", "Firebase"], link: "#", github: "#", image: voting },
-    { title: "CryptoView", category: "Trading", description: "Real-time crypto price tracker using CoinGecko API.", tags: ["API", "Axios"], link: "#", github: "#", image: ecommerceImg },
-    { title: "DevPortfolio V1", category: "Portfolio", description: "Previous iteration of my personal brand site.", tags: ["GSAP", "React"], link: "#", github: "#", image: schoolSite },
-    { title: "TaskMaster", category: "Productivity", description: "Kanban board for team task management and deadling tracking.", tags: ["DragDrop", "Context"], link: "#", github: "#", image: business },
-    { title: "WeatherPro", category: "Utility", description: "Location-based weather forecasting with dynamic backgrounds.", tags: ["OpenWeather", "React"], link: "#", github: "#", image: voting }
   ];
 
   const navigate = useNavigate()
@@ -83,7 +115,7 @@ export default function ProjectLibrary() {
                     <a href={project.github} className="p-2 text-slate-400 hover:text-slate-900 transition-colors">
                       <Github size={18} />
                     </a>
-                    <a href={project.link} className="p-2 text-slate-400 hover:text-blue-600 transition-colors">
+                    <a href={project.link}  target="_blank" rel="noopener noreferrer"  className="p-2 text-slate-400 hover:text-blue-600 transition-colors">
                       <Globe size={18} />
                     </a>
                   </div>

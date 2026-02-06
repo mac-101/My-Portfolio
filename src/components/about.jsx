@@ -101,7 +101,7 @@ export default function About() {
                     {/* CTA */}
                     <div className="pt-4">
                         <a
-                            href="/public/Charles_MacAnthony_CV.pdf.pdf"
+                            href="/Charles_MacAnthony_CV.pdf.pdf"
                             download="Charles_MacAnthony_Resume.pdf"
                             target="_blank"
                             rel="noopener noreferrer"

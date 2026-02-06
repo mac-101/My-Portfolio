@@ -1,30 +1,31 @@
 import React from 'react'
 import { ExternalLink, Github, ArrowUpRight, Sparkles, Eye } from 'lucide-react'
 import { Link } from 'react-router-dom'
-import ecommerceImg from '../assets/school (2).png'
+import healthcore from '../assets/healthcoretech.netlify.app_.png'
 import schoolSite from '../assets/school (1).png'
+import fastfood from '../assets/tastybitefastfood.netlify.app_.png'
 import voting from '../assets/school (4).png'
 
 export default function Projects() {
   const projects = [
     {
-      title: "E-Commerce Platform",
-      description: "Full-featured online store with cart, checkout, and admin dashboard",
+      title: "HealthCore Tech",
+      description: "Full-featured online healthcare platform with appointment scheduling and patient management",
       tags: ["React", "Firebase", "Rest Api", "Tailwind"],
-      image: ecommerceImg,
-      liveLink: "http://shopcart-demo.netlify.app",
+      image: healthcore,
+      liveLink: "http://healthcoretech.netlify.app",
       codeLink: "#"
     },
     {
-      title: "VoteLinkr",
-      description: "Real-time voting application for contests and competitions",
-      tags: ["Firestore", "Tailwind", "Firebase Auth", "React", "Context API"],
-      image: voting,
-      liveLink: "http://votelinkr-ui.netlify.app",
+      title: "TastyBite Fast Food",
+      description: "Modern fast food delivery platform with menu management and order tracking",
+      tags: ["Html", "CSS", "JavaScript", "Tailwind"],
+      image: fastfood,
+      liveLink: "http://tastybitefastfood.netlify.app",
       codeLink: "#"
     },
-    {
-      title: "School Management System",
+   {
+      title: "Clever School",
       description: "A school online presence and management platform",
       tags: ["Html", "API", "CSS", "JavaScript"],
       image: schoolSite,
@@ -112,7 +113,7 @@ export default function Projects() {
         <p className="text-gray-600 mb-6">Interested in more projects and collaborations?</p>
         <Link to="/projects" className="inline-block">
           <span className="inline-flex items-center gap-2 px-8 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-all font-medium active:scale-95 cursor-pointer shadow-lg">
-            Explore Projects
+            See More
           </span>
         </Link>
       </div>

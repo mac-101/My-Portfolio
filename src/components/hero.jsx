@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import pic from "../assets/pic.jpg";
 import pic2 from "../assets/pic-6.jpeg";
+import { Github, Linkedin } from 'lucide-react'
+
 
 export default function Hero() {
   const roles = [
@@ -10,6 +12,23 @@ export default function Hero() {
     "UI/UX Focused Builder"
   ];
 
+  const socials = [
+    {
+      icon: <Github className="w-5 h-5" />,
+      name: "GitHub",
+      link: "https://github.com/mac-101",
+      color: "bg-gray-900  hover:bg-gray-800",
+      username: "@yourusername"
+    },
+    {
+      icon: <Linkedin className="w-5 h-5" />,
+      name: "LinkedIn",
+      link: "https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile",
+      color: "bg-blue-700 hover:bg-blue-600",
+      username: "Charles MacAnthony"
+    },
+    
+  ]
   const [currentRole, setCurrentRole] = useState(0);
 
   useEffect(() => {
@@ -57,7 +76,7 @@ export default function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-12 py-30 items-center ">
           {/* Text */}
           <div className="flex flex-col space-y-8 pt-15 text-white animate-fade-in reveal" data-animation="fade-right">
-            
+
             <div>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
                 I'm{" "}
@@ -76,7 +95,27 @@ export default function Hero() {
                 responsive, and high-performance web experiences using today’s
                 best technologies.
               </p>
-              
+
+              <div>
+                <h3 className="font-medium text-gray-900 mb-3">Connect</h3>
+                <div className="flex gap-4">
+                  {socials.map((social, index) => (
+                    <a
+                      key={index}
+                      href={social.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`p-3 rounded-lg ${social.color} transition-colors reveal`}
+                      data-animation="pop-in"
+                      data-delay={`${index * 0.1}s`}
+                      title={social.name}
+                    >
+                      {social.icon}
+                    </a>
+                  ))}
+                </div>
+              </div>
+
             </div>
 
             {/* Buttons */}
