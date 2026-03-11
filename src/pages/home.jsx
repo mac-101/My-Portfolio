@@ -6,6 +6,7 @@ import About from '../components/about'
 import Projects from '../components/Project'
 import Footer from '../components/footer'
 import Contact from '../components/contact'
+import Skills from '../components/skills'
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
         <Navbar/>
         <Hero/>
         <About/>
+        <Skills/>
         <Service/>
         <Projects/>
         <Contact/>

@@ -1,118 +1,110 @@
 import React from 'react'
-import { User, MapPin, Briefcase, Download, Code2, Database, Smartphone, CheckCircle } from 'lucide-react'
-
+import { User, MapPin, Briefcase, Download, Code2, Database, Smartphone, CheckCircle, Zap, Globe, Cpu } from 'lucide-react'
 
 export default function About() {
-    const skills = [
-        {
-            icon: <Code2 className="w-5 h-5" />,
-            name: "HTML/CSS",
-            level: "Advanced"
-        }, {
-            icon: <Code2 className="w-5 h-5" />,
-            name: "React.js",
-            level: "Advanced"
-        },
-        {
-            icon: <Code2 className="w-5 h-5" />,
-            name: "JavaScript",
-            level: "Advanced"
-        },
-        {
-            icon: <Database className="w-5 h-5" />,
-            name: "Firebase",
-            level: "Advanced"
-        },
-
-        {
-            icon: <Smartphone className="w-5 h-5" />,
-            name: "Responsive Design",
-            level: "Advanced"
-        },
-        {
-            icon: <Code2 className="w-5 h-5" />,
-            name: "Tailwind CSS",
-            level: "Advanced"
-        }
-    ]
-
-
     return (
-        <section id="about" className="py-16 px-3 bg-white">
+        <section id="about" className="py-20 px-4 bg-white">
             <div className="max-w-6xl mx-auto">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
 
-                    {/* Content Section */}
-                    <div
-
-                        className="space-y-6 reveal" data-animation="fade-up">
-                        <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 text-blue-700 rounded-full text-sm font-semibold">
-                            <User className="w-4 h-4" />
-                            About Me
-                        </div>
-
-                        <h2 className="text-3xl font-bold text-gray-900">
-                            Full Stack Developer <span className="text-blue-600">Specializing in React & Firebase</span>
-                        </h2>
-
-                        <p className="text-gray-600 leading-relaxed">
-                            I'm Charles MacAnthony, a passionate developer with 2+ years of experience building
-                            modern web applications. I focus on creating clean, efficient solutions using React
-                            for the frontend and Firebase for backend services.
-                        </p>
-
+                    {/* Left Side: Content Section */}
+                    <div className="space-y-8 reveal" data-animation="fade-up">
                         <div className="space-y-4">
-                            <div className="flex items-center gap-3">
-                                <MapPin className="w-5 h-5 text-blue-600" />
-                                <span className="text-gray-700">Based in Abia, Nigeria</span>
+                            <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 text-blue-700 rounded-full text-sm font-semibold">
+                                <User className="w-4 h-4" />
+                                About Me
                             </div>
-                            <div className="flex items-center gap-3">
-                                <Briefcase className="w-5 h-5 text-blue-600" />
-                                <span className="text-gray-700">2+ years professional experience</span>
-                            </div>
-                        </div>
-                    </div>
 
-                    {/* Skills Section */}
-                    <div
-                        className="pt-6 border-t border-gray-200">
-                        <h3 className="text-xl font-bold text-gray-900 mb-6">Technical Skills</h3>
-                        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                            {skills.map((skill, index) => (
-                                <div
-                                    key={index}
-                                    className="bg-gray-50 p-4 rounded-lg border border-gray-200 hover:border-blue-300 transition-colors reveal" data-animation="pop-in"
-                                >
-                                    <div className="flex items-center gap-3 mb-2">
-                                        <div className="w-8 h-8 rounded-md bg-blue-100 text-blue-600 flex items-center justify-center">
-                                            {skill.icon}
-                                        </div>
-                                        <span className="font-medium text-gray-900">{skill.name}</span>
-                                    </div>
-                                    <div className="flex items-center gap-2">
-                                        <CheckCircle className="w-4 h-4 text-green-500" />
-                                        <span className="text-sm text-gray-600">{skill.level}</span>
-                                    </div>
+                            <h2 className="text-4xl font-bold text-gray-900 leading-tight">
+                                Building Digital Experiences with <span className="text-blue-600">Precision & Passion</span>
+                            </h2>
+
+                            <p className="text-lg text-gray-600 leading-relaxed">
+                                I'm <span className="font-semibold text-gray-900">Charles MacAnthony</span>, a Full Stack Developer based in Abia, Nigeria. 
+                                With over 2 years of hands-on experience, I bridge the gap between complex backend logic and 
+                                intuitive frontend design. My goal is to build scalable, high-performance applications that 
+                                solve real-world problems.
+                            </p>
+                        </div>
+
+                        {/* Quick Stats Grid */}
+                        {/* <div className="grid grid-cols-2 gap-6 pt-4">
+                            <div className="p-4 border border-gray-100 rounded-xl bg-gray-50/50">
+                                <div className="text-3xl font-bold text-blue-600 mb-1">20+</div>
+                                <div className="text-sm text-gray-500 font-medium uppercase tracking-wider">Projects Completed</div>
+                            </div>
+                            <div className="p-4 border border-gray-100 rounded-xl bg-gray-50/50">
+                                <div className="text-3xl font-bold text-blue-600 mb-1">2+</div>
+                                <div className="text-sm text-gray-500 font-medium uppercase tracking-wider">Years Experience</div>
+                            </div>
+                        </div> */}
+
+                        <div className="space-y-4 pt-2">
+                            <div className="flex items-center gap-3 group">
+                                <div className="p-2 bg-blue-50 rounded-lg group-hover:bg-blue-100 transition-colors">
+                                    <MapPin className="w-5 h-5 text-blue-600" />
                                 </div>
-                            ))}
+                                <span className="text-gray-700 font-medium">Based in Abia, Nigeria (Available for Remote)</span>
+                            </div>
+                            <div className="flex items-center gap-3 group">
+                                <div className="p-2 bg-blue-50 rounded-lg group-hover:bg-blue-100 transition-colors">
+                                    <Briefcase className="w-5 h-5 text-blue-600" />
+                                </div>
+                                <span className="text-gray-700 font-medium">Open to Full-time & Freelance Roles</span>
+                            </div>
+                        </div>
+
+                        {/* CTA */}
+                        <div className="pt-6">
+                            <a
+                                href="/Charles_MacAnthony_CV.pdf"
+                                download="Charles_MacAnthony_Resume.pdf"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-3 px-8 py-4 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition-all hover:shadow-lg hover:shadow-blue-200 font-semibold"
+                            >
+                                <Download className="w-5 h-5" />
+                                Download Resume
+                            </a>
                         </div>
                     </div>
 
-                    {/* CTA */}
-                    <div className="pt-4">
-                        <a
-                            href="/Charles_MacAnthony_CV.pdf.pdf"
-                            download="Charles_MacAnthony_Resume.pdf"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
-                        >
-                            <Download className="w-5 h-5" />
-                            Download Resume
-                        </a>
-                    </div>
-                </div>
+                    {/* Right Side: What I Do Section */}
+                    <div className="grid grid-cols-1 gap-4 reveal" data-animation="fade-up">
+                        <h3 className="text-xl font-bold text-gray-900 mb-2">What I specialize in:</h3>
+                        
+                        <div className="p-6 bg-white border border-gray-100 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+                            <div className="flex gap-4">
+                                <div className="mt-1"><Code2 className="w-6 h-6 text-blue-600" /></div>
+                                <div>
+                                    <h4 className="font-bold text-gray-900">Frontend Excellence</h4>
+                                    <p className="text-gray-600 text-sm mt-1">Crafting responsive, accessible, and lightning-fast user interfaces using React, Next.js, and Tailwind CSS.</p>
+                                </div>
+                            </div>
+                        </div>
 
+                        <div className="p-6 bg-white border border-gray-100 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+                            <div className="flex gap-4">
+                                <div className="mt-1"><Database className="w-6 h-6 text-blue-600" /></div>
+                                <div>
+                                    <h4 className="font-bold text-gray-900">Backend & Serverless</h4>
+                                    <p className="text-gray-600 text-sm mt-1">Implementing secure authentication, real-time databases, and cloud functions with Firebase and Node.js.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="p-6 bg-white border border-gray-100 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+                            <div className="flex gap-4">
+                                <div className="mt-1"><Zap className="w-6 h-6 text-blue-600" /></div>
+                                <div>
+                                    <h4 className="font-bold text-gray-900">Performance Optimization</h4>
+                                    <p className="text-gray-600 text-sm mt-1">Ensuring smooth state management with Zustand and writing clean, maintainable code for long-term scalability.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </section>
     )
