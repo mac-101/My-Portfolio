@@ -81,7 +81,7 @@ export default function Hero() {
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
                 I'm{" "}
                 <span className="font-serif text-blue-300">
-                  Charles MacAnthony
+                  Dev MacAnthony
                 </span>
               </h1>
 
