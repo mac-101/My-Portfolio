@@ -163,9 +163,9 @@ export default function Hero() {
 
             <div className="absolute -top-4 -right-4 w-32 h-32 bg-blue-500/20 rounded-full blur-xl"></div>
             <div className="absolute -bottom-4 -left-4 w-40 h-40 bg-purple-500/20 rounded-full blur-xl"></div>
-          </div>
+          </div> */}
         </div>
-      </div> */}
+      </div> 
 
       {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
