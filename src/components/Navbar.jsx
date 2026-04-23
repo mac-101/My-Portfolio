@@ -67,7 +67,7 @@ export function Navbar() {
             </div>
             <h1 className={`font-bold text-xl transition-all duration-300 ${isScrolled ? 'text-gray-900' : 'text-white'
               }`}>
-              C<span className="text-blue-500">MC</span>
+              Dev<span className="text-blue-500">Mac</span>
             </h1>
           </div>
 
