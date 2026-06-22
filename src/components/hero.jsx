@@ -23,7 +23,7 @@ export default function Hero() {
     {
       icon: <Linkedin className="w-5 h-5" />,
       name: "LinkedIn",
-      link: "https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile",
+      link: "www.linkedin.com/in/macanthony-charles-561810367",
       color: "bg-blue-700 hover:bg-blue-600",
       username: "Charles MacAnthony"
     },
