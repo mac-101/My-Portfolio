@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react"
 
-
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -48,42 +47,48 @@ export function Navbar() {
   return (
     <>
       {/* Floating Navbar Container */}
-      <div className={`w-full px-4 md:px-6 z-50 flex justify-center fixed top-4 transition-all duration-300 ${isScrolled ? 'scale-95' : ''
-        }`}>
-        <nav className={`flex w-full max-w-4xl justify-between items-center py-3 px-6 rounded-full shadow-2xl transition-all duration-300 ${isScrolled
+      <div className={`w-full px-4 md:px-6 z-50 flex justify-center fixed top-4 transition-all duration-300 ${
+        isScrolled ? 'scale-95' : ''
+      }`}>
+        <nav className={`flex w-full max-w-5xl justify-between items-center py-3 px-6 rounded-full transition-all duration-300 ${
+          isScrolled
             ? 'bg-white/95 backdrop-blur-lg shadow-xl border border-gray-200/30'
             : 'bg-white/10 backdrop-blur-md border border-white/20'
-          }`}>
+        }`}>
           {/* Logo */}
           <div
             className="flex items-center gap-3 cursor-pointer group"
             onClick={() => scrollToSection("home")}
           >
-            <div className={`w-10 h-10 flex items-center justify-center text-lg font-serif rounded-full font-bold transition-all duration-300 ${isScrolled
+            <div className={`w-10 h-10 flex items-center justify-center text-lg font-serif rounded-full font-bold transition-all duration-300 ${
+              isScrolled
                 ? 'bg-blue-600 text-white'
                 : 'bg-white/20 text-white backdrop-blur-sm'
-              } group-hover:scale-110 group-hover:rotate-12`}>
+            } group-hover:scale-110 group-hover:rotate-12`}>
               M
             </div>
-            <h1 className={`font-bold text-xl transition-all duration-300 ${isScrolled ? 'text-gray-900' : 'text-white'
-              }`}>
+            <h1 className={`font-bold text-xl transition-all duration-300 ${
+              isScrolled ? 'text-gray-900' : 'text-white'
+            }`}>
               Dev<span className="text-blue-500">Mac</span>
             </h1>
           </div>
 
           {/* Desktop Navigation */}
-          <ul className="hidden md:flex font-medium gap-6 lg:gap-8 items-center">
+          <ul className="hidden lg:flex font-medium gap-6 lg:gap-8 items-center">
             {navItems.slice(0, -1).map((item) => (
               <li
-
-                className={`relative cursor-pointer transition-all duration-300 py-2 px-1 ${isScrolled ? 'text-gray-700 hover:text-blue-600' : 'text-white/90 hover:text-white'
-                  } ${activeSection === item.id ? (isScrolled ? 'text-blue-600' : 'text-white') : ''}`}
+                key={item.id}
+                className={`relative cursor-pointer transition-all duration-300 py-2 px-1 text-sm ${
+                  isScrolled ? 'text-gray-700 hover:text-blue-600' : 'text-white/90 hover:text-white'
+                } ${activeSection === item.id ? (isScrolled ? 'text-blue-600 font-semibold' : 'text-white font-semibold') : ''}`}
                 onClick={() => scrollToSection(item.id)}
               >
                 {item.label}
                 {activeSection === item.id && (
-                  <span className={`absolute bottom-0 left-0 w-full h-1 rounded-full ${isScrolled ? 'bg-blue-500' : 'bg-white'
-                    } animate-pulse`}></span>
+                  <span className={`absolute bottom-0 left-0 w-full h-0.5 rounded-full ${
+                    isScrolled ? 'bg-blue-500' : 'bg-white'
+                  }`}></span>
                 )}
               </li>
             ))}
@@ -92,74 +97,67 @@ export function Navbar() {
           {/* Contact Button - Desktop */}
           <button
             onClick={() => scrollToSection("contact")}
-            className={`hidden md:block font-medium py-2.5 px-6 rounded-full transition-all duration-300 ${isScrolled
-                ? 'bg-blue-600 text-white hover:bg-blue-700 hover:shadow-lg'
+            className={`hidden lg:block text-sm font-medium py-2 px-5 rounded-full transition-all duration-300 ${
+              isScrolled
+                ? 'bg-blue-600 text-white hover:bg-blue-700 hover:shadow-md'
                 : 'bg-white/20 backdrop-blur-sm text-white border border-white/30 hover:bg-white/30 hover:scale-105'
-              }`}
+            }`}
           >
             Contact Me
           </button>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Menu Button (Hamburger) */}
           <button
-            className="md:hidden flex flex-col gap-1.5 p-2"
+            className="lg:hidden flex flex-col gap-1.5 p-2 focus:outline-none relative z-50"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Toggle Menu"
           >
-            <span className={`w-6 h-0.5 rounded-full transition-all duration-300 ${isScrolled ? 'bg-gray-700' : 'bg-white'
-              } ${isMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
-            <span className={`w-6 h-0.5 rounded-full transition-all duration-300 ${isScrolled ? 'bg-gray-700' : 'bg-white'
-              } ${isMenuOpen ? 'opacity-0' : 'opacity-100'}`}></span>
-            <span className={`w-6 h-0.5 rounded-full transition-all duration-300 ${isScrolled ? 'bg-gray-700' : 'bg-white'
-              } ${isMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
+            <span className={`w-6 h-0.5 rounded-full transition-all duration-300 origin-center ${
+              isScrolled || isMenuOpen ? 'bg-gray-800' : 'bg-white'
+            } ${isMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
+            
+            <span className={`w-6 h-0.5 rounded-full transition-all duration-300 ${
+              isScrolled || isMenuOpen ? 'bg-gray-800' : 'bg-white'
+            } ${isMenuOpen ? 'opacity-0' : 'opacity-100'}`}></span>
+            
+            <span className={`w-6 h-0.5 rounded-full transition-all duration-300 origin-center ${
+              isScrolled || isMenuOpen ? 'bg-gray-800' : 'bg-white'
+            } ${isMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
           </button>
         </nav>
       </div>
 
       {/* Mobile Menu Overlay */}
-      <div className={`fixed inset-0  z-40 md:hidden transition-all duration-300 ${isMenuOpen
-          ? 'opacity-100 pointer-events-auto'
-          : 'opacity-0 pointer-events-none'
-        }`}>
+      <div className={`fixed inset-0 z-40 lg:hidden transition-all duration-300 ${
+        isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+      }`}>
+        {/* Dark Background Blocker */}
         <div
-          className="absolute inset-0 bg-black/40 backdrop-blur-sm"
+          className="absolute inset-0 bg-black/30 backdrop-blur-sm"
           onClick={() => setIsMenuOpen(false)}
         />
 
-        <div className={`absolute top-20 right-4 w-64 bg-white/95 backdrop-blur-lg rounded-2xl shadow-2xl p-6 border border-gray-200/30 transition-all duration-300 ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'
-          }`}>
-          <ul className="flex flex-col gap-2">
+        {/* Dropdown Container Card */}
+        <div className={`absolute top-24 right-4 w-64 bg-white rounded-2xl shadow-xl p-5 border border-gray-100 transition-all duration-300 origin-top-right ${
+          isMenuOpen ? 'scale-100 opacity-100' : 'scale-95 opacity-0'
+        }`}>
+          <ul className="flex flex-col gap-1">
             {navItems.map((item) => (
               <li
                 key={item.id}
-                className={`py-3 px-4 rounded-xl cursor-pointer transition-all duration-300 ${activeSection === item.id
-                    ? 'bg-blue-50 text-blue-600 font-medium'
-                    : 'text-gray-700 hover:bg-gray-100'
-                  }`}
+                className={`py-2.5 px-3.5 text-sm rounded-xl cursor-pointer transition-all duration-200 ${
+                  activeSection === item.id
+                    ? 'bg-blue-50 text-blue-600 font-semibold'
+                    : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
+                }`}
                 onClick={() => scrollToSection(item.id)}
               >
                 {item.label}
               </li>
             ))}
           </ul>
-
-          <button
-            onClick={() => scrollToSection("contact")}
-            className="w-full mt-6 font-medium py-3 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition-all duration-300"
-          >
-            Get In Touch
-          </button>
         </div>
       </div>
-
-      {/* Scroll Progress Bar */}
-      {/* <div className="fixed top-0 left-0 right-0 h-1 z-50">
-        <div
-          className="h-full bg-linear-to-r from-blue-500 to-purple-500 transition-all duration-300"
-          style={{
-            width: `${Math.min((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100, 100)}%`
-          }}
-        />
-      </div> */}
     </>
   )
 }

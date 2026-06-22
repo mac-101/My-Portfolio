@@ -57,7 +57,7 @@ export default function About() {
                         {/* CTA */}
                         <div className="pt-6">
                             <a
-                                href="/Charles_MacAnthony_CV.pdf"
+                                href="/Charles_MacAnthony_Resume.pdf"
                                 download="Charles_MacAnthony_Resume.pdf"
                                 target="_blank"
                                 rel="noopener noreferrer"

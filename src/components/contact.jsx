@@ -50,7 +50,7 @@ export default function Contact() {
               
               <div className="flex items-center gap-3">
                 <MapPin className="w-5 h-5 text-purple-600" />
-                <span className="text-gray-700">Lagos, Nigeria</span>
+                <span className="text-gray-700">Abia, Nigeria</span>
               </div>
             </div>
 

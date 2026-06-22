@@ -1,41 +1,43 @@
 import React from 'react'
-import { ExternalLink, Github, ArrowUpRight, Sparkles, Eye } from 'lucide-react'
+import { ExternalLink, Github, ArrowUpRight, Eye } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import healthcore from '../assets/healthcoretech.png'
 import schoolSite from '../assets/school (1).png'
-import fastfood from '../assets/tastybitefastfood.png'
+import voting from '../assets/school (4).png'
 import business from '../assets/school (3).png'
+import payhaus from '../assets/payhaus.png'
+import cakeGallery from '../assets/bakery.png'
 
 export default function Projects() {
   const projects = [
     {
-      title: "SmartBiz Inventory",
-      description: "A robust SaaS platform for small businesses featuring real-time inventory tracking, bulk purchase calculators, and automated sales reporting.",
+      title: "Payhaus",
+      description: "A SaaS platform for tenant rent payment, featuring rent payment integration, rent due reminder, receipt generator, transaction history, landlord and tenant dashboards.",
       tags: ["React", "Zustand", "Firebase", "Tailwind"],
-      image: business,
-      liveLink: "http://smartbiz-os.netlify.app",
+      image: payhaus,
+      liveLink: "http://payhaus.netlify.app",
       codeLink: "#",
-      isFeatured: true 
+      isFeatured: true
     },
     {
-      title: "HealthCore Tech",
-      description: "Full-featured online healthcare platform with appointment scheduling and patient management",
-      tags: ["React", "Firebase", "Rest Api", "Tailwind"],
-      image: healthcore,
-      liveLink: "http://healthcoretech.netlify.app",
+      title: "Glory Bakery & Gallery",
+      description: "Online showcase and gallery of cakes, featuring custom orders, team booking slots, and a baking academy enrollment system.",
+      tags: ["React", "Tailwind",], // Swap out with your actual tech stack
+      image: cakeGallery, // Make sure to import this asset at the top of your file
+      liveLink: "https://glory-bakery.netlify.app/", // Update with your actual live link
       codeLink: "#"
     },
     {
-      title: "TastyBite Fast Food",
-      description: "Modern fast food delivery platform with menu management and order tracking",
-      tags: ["Html", "CSS", "JavaScript", "Tailwind"],
-      image: fastfood,
-      liveLink: "http://tastybitefastfood.netlify.app",
-      codeLink: "#"
+      title: "VoteLinkr",
+      description: "Real-time voting application for contests and competitions",
+      tags: ["Firestore", "Tailwind", "Firebase Auth", "React", "Context API"],
+      image: voting,
+      link: "http://votelinkr-ui.netlify.app",
+      github: "https://github.com/mac-101"
     },
     {
       title: "Clever School",
-      description: "A school online presence and management platform",
+      description: "A school online presence and management platform.",
       tags: ["Html", "API", "CSS", "JavaScript"],
       image: schoolSite,
       liveLink: "http://cleverschool.netlify.app",
@@ -44,92 +46,133 @@ export default function Projects() {
   ]
 
   return (
-    <section id="projects" className="py-16 px-4 bg-gray-50 overflow-hidden">
-      <div className="max-w-7xl mx-auto">
-        
+    <section id="projects" className="py-12 bg-white px-4">
+      <div className="max-w-6xl mx-auto">
+
+        {/* Compact Header */}
+
+
         {/* Header - Kept your Sparkles style */}
+
         <div className="text-center mb-12">
-          
+
+
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+
             Featured <span className="text-blue-600">Projects</span>
+
           </h2>
+
           <p className="text-gray-600 max-w-2xl mx-auto">
+
             A selection of my recent work showcasing React, SaaS architecture, and Firebase applications
+
           </p>
+
         </div>
 
-        {/* Project Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+
+
+        {/* Dense 2x2 Grid Layout */}
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-5">
           {projects.map((project, index) => (
             <div
               key={index}
-              className={`bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all border border-gray-200 group flex flex-col ${project.isFeatured ? 'md:col-span-2 lg:flex-row' : ''}`}
+              className="bg-white rounded-xl overflow-hidden border border-gray-200/80 transition-all duration-200 hover:-translate-y-1 hover:shadow-md hover:border-blue-200 flex flex-col group"
             >
-              {/* Image Area with Overlay Logic */}
-              <div className={`relative overflow-hidden bg-gray-100 ${project.isFeatured ? 'lg:w-1/2 h-64 lg:h-auto' : 'h-48'}`}>
+              {/* Shortened Image Wrapper */}
+              <div className="relative h-40 overflow-hidden bg-gray-100">
                 {project.image ? (
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="w-full h-full object-cover group-hover:scale-102 transition-transform duration-500 ease-out"
                   />
                 ) : (
                   <div className="w-full h-full flex items-center justify-center">
-                    <Eye className="w-12 h-12 text-gray-400" />
+                    <Eye className="w-8 h-8 text-gray-300" />
                   </div>
                 )}
 
-                {/* Overlay Links from previous version */}
-                <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="flex gap-4 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                    <a href={project.liveLink} target='_blank' rel="noopener noreferrer" className="w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-blue-500 hover:text-white transition-colors text-gray-900">
-                      <ExternalLink size={20} />
-                    </a>
-                    <a href={project.codeLink} className="w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-blue-500 hover:text-white transition-colors text-gray-900">
-                      <Github size={20} />
-                    </a>
-                  </div>
-                </div>
+                {project.isFeatured && (
+                  <span className="absolute top-3 left-3 text-[9px] bg-blue-600 text-white px-2 py-0.5 rounded-md font-bold uppercase tracking-wider shadow-sm">
+                    Featured
+                  </span>
+                )}
               </div>
 
-              {/* Content Area */}
-              <div className="p-6 md:p-8 flex flex-col justify-center flex-1">
-                <div className="flex justify-between items-center mb-2">
-                  <h3 className="text-xl font-bold text-gray-900">{project.title}</h3>
-                  {project.isFeatured && <span className="text-[10px] bg-blue-600 text-white px-2 py-1 rounded font-black uppercase tracking-tighter">Latest</span>}
-                </div>
-                
-                <p className="text-gray-600 text-sm mb-4 leading-relaxed">
-                  {project.description}
-                </p>
-
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {project.tags.map((tag, idx) => (
-                    <span key={idx} className="px-3 py-1 bg-blue-50 text-blue-600 text-[10px] font-bold uppercase rounded-md tracking-wider border border-blue-100">
-                      {tag}
-                    </span>
-                  ))}
+              {/* Condensed Content Area */}
+              <div className="p-4 flex flex-col justify-between flex-1">
+                <div>
+                  <h3 className="text-base font-bold text-gray-900 tracking-tight group-hover:text-blue-600 transition-colors mb-1">
+                    {project.title}
+                  </h3>
+                  <p className="text-gray-600 text-xs line-clamp-2 leading-relaxed mb-3">
+                    {project.description}
+                  </p>
                 </div>
 
-                <div className="flex gap-4 mt-auto">
-                  <a href={project.liveLink} target="_blank" rel="noopener noreferrer" className="text-sm text-blue-600 hover:underline font-semibold flex items-center gap-1">
-                    Live Demo <ArrowUpRight size={14} />
-                  </a>
+                <div>
+                  {/* Clean, smaller tags */}
+                  <div className="flex flex-wrap gap-1 mb-3.5">
+                    {project.tags.map((tag, idx) => (
+                      <span key={idx} className="px-2 py-0.5 bg-gray-50 text-gray-500 text-[10px] font-medium rounded border border-gray-200/50">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* Footer links */}
+                  <div className="flex items-center justify-between pt-2.5 border-t border-gray-100">
+                    <a
+                      href={project.liveLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 text-xs font-semibold text-blue-600 hover:text-blue-700 transition-colors"
+                    >
+                      Live Demo <ArrowUpRight size={13} />
+                    </a>
+                    <a
+                      href={project.codeLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-1 text-gray-400 hover:text-gray-700 transition-colors"
+                    >
+                      <Github size={15} />
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
           ))}
-        </div>
-      </div>
 
-      {/* Call to Action */}
-      <div className="text-center mt-16 pt-8 border-t border-gray-200">
-        <p className="text-gray-600 mb-6 font-medium">Interested in more projects and collaborations?</p>
-        <Link to="/projects" className="inline-block">
-          <span className="inline-flex items-center gap-2 px-8 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-all font-medium active:scale-95 cursor-pointer shadow-lg">
-            See More Projects
-          </span>
-        </Link>
+        </div>
+
+        <div className="text-center mt-16 pt-8 border-t border-gray-200">
+
+          <p className="text-white mb-6 font-medium">Interested in more projects and collaborations?</p>
+
+          <Link to="/projects" className="inline-block">
+
+            <span className="inline-flex items-center gap-2 px-8 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-all font-medium active:scale-95 cursor-pointer shadow-lg">
+
+              See More Projects
+
+            </span>
+
+          </Link>
+
+        </div>
+
+
+
+        {/* Mobile-only bottom CTA link */}
+        <div className="text-center mt-6 sm:hidden">
+          <Link to="/projects" className="inline-flex items-center gap-1 text-xs font-semibold text-blue-600">
+            View All Archive <ArrowUpRight size={14} />
+          </Link>
+        </div>
+
       </div>
     </section>
   )
