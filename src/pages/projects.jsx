@@ -30,7 +30,7 @@ export default function ProjectLibrary() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {portfolioProjects.map((project, index) => {
             const projectLink = project.link || project.link || '#'
-            const githubLink = project.github || project.codeLink || '#'
+            const githubLink = project.github || project.github || '#'
 
             return (
               <div

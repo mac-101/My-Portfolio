@@ -21,7 +21,7 @@ export default function About() {
 
               <p className="text-lg text-gray-600 leading-relaxed">
                 I'm <span className="font-semibold text-gray-900">Charles MacAnthony</span>, a Full Stack Developer based in Abia, Nigeria.
-                With over 2 years of hands-on experience, I bridge the gap between complex backend logic and
+                With 2 years of hands-on experience, I bridge the gap between complex backend logic and
                 intuitive frontend design. My goal is to build scalable, high-performance applications that
                 solve real-world problems.
               </p>
@@ -88,7 +88,7 @@ export default function About() {
                 <div className="mt-1"><Database className="w-6 h-6 text-blue-600" /></div>
                 <div>
                   <h4 className="font-bold text-gray-900">Backend & Serverless</h4>
-                  <p className="text-gray-600 text-sm mt-1">Implementing secure authentication, real-time databases, and cloud functions with Firebase and Node.js.</p>
+                  <p className="text-gray-600 text-sm mt-1">Designing secure authentication flows, managing real-time data streaming, database schemas and deploying serverless cloud functions with Python || Django.</p>
                 </div>
               </div>
             </div>

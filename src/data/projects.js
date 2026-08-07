@@ -6,7 +6,7 @@ import cakeGalleryImg from '../assets/bakery.png'
 import stylehub from '../assets/stylehub.png'
 import hybridsec from '../assets/hybridsec.png'
 import abadev from '../assets/abadev.png'
-import brightpath from '../assets/brightpath.png'
+import brightpath from '../assets/brigthpath.png'
 import essykilishi from '../assets/essykilishi.png'
 import schmanage from "../assets/schmanage.png"
 
@@ -26,7 +26,7 @@ export const projects = [
     title: 'Clever School',
     category: 'Education',
     description: 'A modern, high-performance informational website. It showcases academic programs, campus culture, and admissions to parents and prospective students through a highly accessible, easy-to-navigate interface',
-    tags: ['HTML', 'API', 'CSS', 'JavaScript'],
+    tags: ['HTML', 'REST API', 'CSS', 'JavaScript'],
     image: cleverschoolImg,
     link: 'http://cleverkidsschoolsinternational.com.ng/',
     github: 'http://github.com/mac-101',
@@ -48,7 +48,7 @@ export const projects = [
     category: 'Brand Site',
     description:
       'A beef jerky business site, product showcase, placing order, and gaining trust',
-    tags: ['React', 'Zustand', 'Firebase', 'Tailwind'],
+    tags: ['React', 'Tailwind'],
     image: essykilishi,
     link: 'https://essy-kilishi.vercel.app/',
     github: 'https://github.com/mac-101/essy-kilishi',
@@ -58,11 +58,11 @@ export const projects = [
     category: 'School Management',
     description:
       '(In production) School manaement system, staff listing, student listing, timetable scheduling, school curriculum, fees tracking.',
-    tags: ['React', 'Zustand', 'Firebase', 'Tailwind'],
+    tags: ['Django', 'Python','React', 'DRF', 'Postgresql', 'Tailwind'],
     image: schmanage,
     link: '#',
     github: 'https://github.com/mac-101/school-management-system',
-    isFeatured = true
+    isFeatured: true
   },
   {
     title: 'Glory Bakery & Gallery',
@@ -113,5 +113,6 @@ export const projects = [
     image: abadev,
     link: 'https://aba-dev-summit.vercel.app/',
     github: 'https://github.com/mac-101/Aba-Dev-Summit-2026-landing-page',
+    isFeatured : true
   },
 ]

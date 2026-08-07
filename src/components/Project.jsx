@@ -21,8 +21,8 @@ export default function Projects() {
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-5">
           {featuredProjects.map((project) => {
-            const liveUrl = project.liveLink || project.link || '#'
-            const githubUrl = project.codeLink || project.github || '#'
+            const liveUrl = project.link || project.link || '#'
+            const githubUrl = project.github || project.github || '#'
 
             return (
               <div
@@ -40,12 +40,6 @@ export default function Projects() {
                     <div className="w-full h-full flex items-center justify-center">
                       <Eye className="w-8 h-8 text-gray-300" />
                     </div>
-                  )}
-
-                  {project.isFeatured && (
-                    <span className="absolute top-3 left-3 text-[9px] bg-blue-600 text-white px-2 py-0.5 rounded-md font-bold uppercase tracking-wider shadow-sm">
-                      Featured
-                    </span>
                   )}
                 </div>
 

@@ -7,9 +7,11 @@ import { Github, Linkedin } from 'lucide-react'
 export default function Hero() {
   const roles = [
     "Web Developer",
-    "Frontend Engineer",
+    "Fullstack Developer",
+    "Python Developer",
     "React Developer",
-    "UI/UX Focused Builder"
+    "UI/UX Focused Builder",
+    "System Focused Builder"
   ];
 
   const socials = [
