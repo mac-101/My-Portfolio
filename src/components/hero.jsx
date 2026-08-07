@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import pic from "../assets/pic.jpg";
+import pic from "../assets/me.png";
 import pic2 from "../assets/pic-6.jpeg";
 import { Github, Linkedin } from 'lucide-react'
 
@@ -152,18 +152,18 @@ export default function Hero() {
           </div>
 
           {/* Image */}
-       {/*   <div className="relative flex justify-center reveal" data-animation="rotate-up" data-delay="0.5">
-            <div className="relative w-60 h-70 sm:w-70 sm:h-90 lg:w-80 lg:h-110  overflow-hidden rotate-20 shadow-2xl">
+         <div className="relative hidden lg:flex justify-center reveal" data-animation="rotate-up" data-delay="0.5">
+            <div className="relative w-60 h-70 sm:w-70 sm:h-90 lg:w-150 lg:h-110  overflow-hidden shadow-2xl">
               <img
                 src={pic}
                 alt="Charles MacAnthony"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover object-top"
               />
             </div>
 
             <div className="absolute -top-4 -right-4 w-32 h-32 bg-blue-500/20 rounded-full blur-xl"></div>
             <div className="absolute -bottom-4 -left-4 w-40 h-40 bg-purple-500/20 rounded-full blur-xl"></div>
-          </div> */}
+          </div>
         </div>
       </div> 
 

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes, useLocation } from "react-router-dom";
 import Home from "./pages/home";
-import ProjectLibrary from "./pages/projects";
+import ProjectLibrary from "./pages/ProjectLibrary";
 
 // This small component handles the "Watching" logic
 function ScrollObserver() {
